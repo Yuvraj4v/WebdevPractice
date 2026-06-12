@@ -1,7 +1,7 @@
 /**
- * ═══════════════════════════════════════════════════════════════
+ * 
  * CALC — Scientific Calculator  |  script.js
- * ═══════════════════════════════════════════════════════════════
+ * 
  *
  * Architecture:
  *   CalcState   — pure state object (no DOM knowledge)
@@ -10,12 +10,12 @@
  *   CalcApp     — wires the three layers together
  *
  * No external libraries. Vanilla ES2020.
- * ═══════════════════════════════════════════════════════════════
+ * 
  */
 
 'use strict';
 
-/* ── 1. STATE ────────────────────────────────────────────────── */
+/*  1. STATE  */
 const CalcState = (() => {
   let state = {
     current:      '',     // what the user is currently typing
@@ -60,7 +60,7 @@ const CalcState = (() => {
 const S = CalcState.state;
 
 
-/* ── 2. ENGINE — pure math ───────────────────────────────────── */
+/*  2. ENGINE — pure math  */
 const CalcEngine = (() => {
 
   /** Format a number nicely — cap at 12 significant digits */
@@ -148,7 +148,7 @@ const CalcEngine = (() => {
 })();
 
 
-/* ── 3. UI ───────────────────────────────────────────────────── */
+/* 3. UI  */
 const CalcUI = (() => {
 
   // Cache DOM references once
@@ -308,7 +308,7 @@ const CalcUI = (() => {
 })();
 
 
-/* ── 4. APP — wires state + engine + UI ─────────────────────── */
+/*  4. APP — wires state + engine + UI */
 const CalcApp = (() => {
 
   const { state: S } = CalcState;
@@ -721,5 +721,5 @@ const CalcApp = (() => {
 })();
 
 
-/* ── 5. BOOTSTRAP ────────────────────────────────────────────── */
+/*  5. BOOTSTRAP */
 document.addEventListener('DOMContentLoaded', CalcApp.init);

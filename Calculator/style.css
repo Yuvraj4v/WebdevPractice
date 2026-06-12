@@ -1,10 +1,10 @@
-/* ═══════════════════════════════════════════════════════════════
+/* 
    CALC — Scientific Calculator  |  style.css
    Aesthetic: Dark-first refined glassmorphism with acid-green accent
    Fonts: Syne (display) + JetBrains Mono (numeric)
-   ═══════════════════════════════════════════════════════════════ */
+    */
 
-/* ── 1. DESIGN TOKENS ─────────────────────────────────────────── */
+/*  1. DESIGN TOKENS  */
 :root {
   /* Dark theme (default) */
   --bg-base:        #0c0d0f;
@@ -85,7 +85,7 @@
   --orb3: rgba(140, 50,  200, 0.05);
 }
 
-/* ── 2. RESET & BASE ──────────────────────────────────────────── */
+/*  2. RESET & BASE  */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { font-size: 16px; -webkit-font-smoothing: antialiased; }
@@ -103,7 +103,7 @@ body {
   padding: 1rem;
 }
 
-/* ── 3. AMBIENT BACKGROUND ORBS ─────────────────────────────── */
+/*  3. AMBIENT BACKGROUND ORBS  */
 .bg-orb {
   position: fixed;
   border-radius: 50%;
@@ -140,7 +140,7 @@ body {
   to   { transform: translate(30px, 20px) scale(1.08); }
 }
 
-/* ── 4. APP WRAPPER ──────────────────────────────────────────── */
+/*  4. APP WRAPPER  */
 .app-wrapper {
   position: relative;
   z-index: 1;
@@ -151,7 +151,7 @@ body {
   gap: 0;
 }
 
-/* ── 5. TOP BAR ──────────────────────────────────────────────── */
+/*  5. TOP BAR  */
 .top-bar {
   display: flex;
   align-items: center;
@@ -198,14 +198,14 @@ body {
 [data-theme="light"] .icon-sun  { display: none;  }
 [data-theme="light"] .icon-moon { display: block; }
 
-/* ── 6. LAYOUT ───────────────────────────────────────────────── */
+/*  6. LAYOUT ─ */
 .calc-layout {
   display: flex;
   gap: 1rem;
   align-items: flex-start;
 }
 
-/* ── 7. HISTORY PANEL ────────────────────────────────────────── */
+/*  7. HISTORY PANEL  */
 .history-panel {
   flex: 0 0 240px;
   background: var(--bg-glass);
@@ -313,7 +313,7 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* ── 8. CALCULATOR CARD ─────────────────────────────────────── */
+/*  8. CALCULATOR CARD ─ */
 .calculator {
   flex: 1;
   background: var(--bg-glass);
@@ -328,7 +328,7 @@ body {
   gap: 1rem;
 }
 
-/* ── 9. DISPLAY ──────────────────────────────────────────────── */
+/*  9. DISPLAY  */
 .display {
   background: var(--bg-raised);
   border: 1px solid var(--border);
@@ -435,7 +435,7 @@ body {
   transform: translateY(0);
 }
 
-/* ── 10. MODE BAR ────────────────────────────────────────────── */
+/*  10. MODE BAR  */
 .mode-bar {
   display: flex;
   gap: 0.4rem;
@@ -472,7 +472,7 @@ body {
   color: var(--text-primary);
 }
 
-/* ── 11. SCIENTIFIC PANEL ────────────────────────────────────── */
+/*  11. SCIENTIFIC PANEL  */
 .sci-panel {
   display: none;
   grid-template-columns: repeat(6, 1fr);
@@ -481,7 +481,7 @@ body {
 
 .sci-panel.visible { display: grid; }
 
-/* ── 12. BUTTONS — shared ────────────────────────────────────── */
+/*  12. BUTTONS — shared  */
 .btn {
   position: relative;
   display: flex;
@@ -530,7 +530,7 @@ body {
   box-shadow: none !important;
 }
 
-/* ── Number buttons ── */
+/*  Number buttons  */
 .btn-num {
   background: var(--num-bg);
   color: var(--text-primary);
@@ -547,7 +547,7 @@ body {
 /* Wide zero */
 .btn-zero { grid-column: span 1; }
 
-/* ── Operator buttons ── */
+/*  Operator buttons  */
 .btn-op {
   background: var(--op-bg);
   color: var(--op-color);
@@ -561,7 +561,7 @@ body {
   box-shadow: 0 4px 16px var(--op-glow);
 }
 
-/* ── Utility buttons (AC/C/⌫) ── */
+/*  Utility buttons (AC/C/⌫)  */
 .btn-util {
   background: var(--util-bg);
   color: var(--util-color);
@@ -575,7 +575,7 @@ body {
   box-shadow: 0 4px 16px var(--util-glow);
 }
 
-/* ── Equals button ── */
+/*  Equals button  */
 .btn-eq {
   background: var(--accent);
   color: #0a0a0a;
@@ -591,7 +591,7 @@ body {
 }
 .btn-eq:active { transform: scale(0.93) translateY(0); }
 
-/* ── Scientific mini buttons ── */
+/*  Scientific mini buttons  */
 .btn-sci {
   background: var(--num-bg);
   color: var(--text-secondary);
@@ -608,14 +608,14 @@ body {
   box-shadow: 0 2px 10px var(--accent-glow);
 }
 
-/* ── 13. MAIN BUTTON GRID ────────────────────────────────────── */
+/*  13. MAIN BUTTON GRID  */
 .btn-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
 }
 
-/* ── 14. KEYBOARD HINT ───────────────────────────────────────── */
+/*  14. KEYBOARD HINT ─ */
 .keyboard-hint {
   text-align: center;
   font-family: 'JetBrains Mono', monospace;
@@ -635,7 +635,7 @@ body {
   color: var(--text-secondary);
 }
 
-/* ── 15. ANIMATIONS ──────────────────────────────────────────── */
+/*  15. ANIMATIONS  */
 
 /* Result pop on equals */
 @keyframes resultPop {
@@ -657,12 +657,12 @@ body {
 
 .display.shake { animation: shake 0.4s ease; }
 
-/* ── 16. SCROLLBAR (global) ──────────────────────────────────── */
+/*  16. SCROLLBAR (global)  */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
 
-/* ── 17. RESPONSIVE ─────────────────────────────────────────── */
+/*  17. RESPONSIVE ─ */
 
 /* Tablet – hide history panel by default, show via toggle */
 @media (max-width: 768px) {
