@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopEase – Shop the Latest Trends</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <! Page loader >
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-logo">ShopEase</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <! Toast >
+  <div id="toast" class="toast"></div>
+
+  <! Navbar >
+  <header id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Shop<span>Ease</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#cart-sidebar" id="navCart">Cart</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="search-wrap">
+          <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off" />
+          <i class="fa fa-search search-icon"></i>
+        </div>
+
+        <button class="theme-btn" id="themeToggle" title="Toggle dark/light mode">
+          <i class="fa fa-moon"></i>
+        </button>
+
+        <button class="cart-btn" id="cartBtn">
+          <i class="fa fa-shopping-cart"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <! Hero >
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content fade-in">
+      <span class="hero-badge">🔥 Up to 60% off this week</span>
+      <h1>Shop the<br /><em>Latest Trends</em></h1>
+      <p>Discover thousands of products from top brands — electronics, fashion, shoes, and more. Fast delivery, easy returns.</p>
+      <a href="#products" class="btn-primary">Shop Now <i class="fa fa-arrow-right"></i></a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card card-1">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=200&h=200&fit=crop" alt="Watch" />
+        <p>Smart Watch</p>
+        <strong>$129</strong>
+      </div>
+      <div class="hero-card card-2">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=200&h=200&fit=crop" alt="Perfume" />
+        <p>Perfume</p>
+        <strong>$79</strong>
+      </div>
+      <div class="hero-card card-3">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&h=200&fit=crop" alt="Shoes" />
+        <p>Sneakers</p>
+        <strong>$95</strong>
+      </div>
+    </div>
+  </section>
+
+  <! Category Filter >
+  <section class="filter-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Products</h2>
+        <p>Browse our handpicked collection</p>
+      </div>
+      <div class="filter-buttons" id="filterButtons">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="electronics"><i class="fa fa-laptop"></i> Electronics</button>
+        <button class="filter-btn" data-cat="fashion"><i class="fa fa-shirt"></i> Fashion</button>
+        <button class="filter-btn" data-cat="shoes"><i class="fa fa-shoe-prints"></i> Shoes</button>
+        <button class="filter-btn" data-cat="accessories"><i class="fa fa-gem"></i> Accessories</button>
+      </div>
+    </div>
+  </section>
+
+  <! Products Grid >
+  <section class="products-section">
+    <div class="container">
+      <div class="product-grid" id="productGrid"></div>
+      <p class="no-results" id="noResults" style="display:none;">No products found. Try a different search.</p>
+    </div>
+  </section>
+
+  <! Cart Sidebar >
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fa fa-shopping-bag"></i> Your Cart</h3>
+      <button id="closeCart"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="btn-primary checkout-btn">Checkout <i class="fa fa-arrow-right"></i></button>
+      <button class="btn-clear" id="clearCart">Clear Cart</button>
+    </div>
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fa fa-shopping-cart"></i>
+      <p>Your cart is empty</p>
+      <a href="#products" class="btn-primary" id="startShoppingBtn">Start Shopping</a>
+    </div>
+  </aside>
+
+  <! Contact / Footer >
+  <footer id="contact">
+    <div class="footer-top container">
+      <div class="footer-col brand-col">
+        <span class="nav-logo">Shop<span>Ease</span></span>
+        <p>Your one-stop destination for the best deals on electronics, fashion, footwear, and accessories.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#products">Electronics</a></li>
+          <li><a href="#products">Fashion</a></li>
+          <li><a href="#products">Shoes</a></li>
+          <li><a href="#products">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Get the best deals delivered straight to your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="your@email.com" id="newsletterEmail" />
+          <button onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>&copy; 2025 ShopEase. All rights reserved. Built with ❤️</p>
+    </div>
+  </footer>
+
+  <! Back to top >
+  <button class="back-top" id="backTop" title="Back to top">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
