@@ -1,0 +1,45 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✨ Todo List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="todo-app" id="app">
+    <div class="app-header">
+      <h1><i class="fas fa-check-circle" style="color: #7d6b8f;"></i> Todo</h1>
+      <button class="dark-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+
+    <div class="add-task">
+      <input type="text" id="taskInput" placeholder="Write a new task..." />
+      <button id="addTaskBtn"><i class="fas fa-plus"></i> Add</button>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+      <div class="task-counter" id="taskCounter">
+        <span id="totalTasks">0 total</span>
+        <span id="completedTasks">0 done</span>
+        <span id="pendingTasks">0 pending</span>
+      </div>
+    </div>
+
+    <ul class="task-list" id="taskList"></ul>
+
+    <button class="clear-all" id="clearAllBtn"><i class="fas fa-trash-alt"></i> Clear all tasks</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
