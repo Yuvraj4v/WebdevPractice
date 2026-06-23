@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="game-container" id="app">
+        <div class="top-bar">
+            <div class="scoreboard">
+                <span class="red-score" id="redScoreDisplay">0</span>
+                <span class="yellow-score" id="yellowScoreDisplay">0</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        </div>
+        <div class="board-wrapper">
+            <div class="board" id="board"></div>
+        </div>
+        <div class="status-area">
+            <div class="turn-indicator" id="turnIndicator">
+                <span class="turn-dot red-dot" id="turnDot"></span>
+                <span id="turnText">Red's turn</span>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-ai" id="aiToggle">🤖 AI Off</button>
+                <button class="btn" id="restartBtn">↻ Restart</button>
+            </div>
+            <div class="message" id="message">&nbsp;</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
